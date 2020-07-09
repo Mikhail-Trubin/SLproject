@@ -5,13 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class second : AppCompatActivity() {
+class third : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        setContentView(R.layout.activity_third)
     }
-    fun ok (view: View){
-        val randomIntent = Intent( this, third::class.java)
+    fun ok2 (view: View){
+        val randomIntent = Intent( this, forth::class.java)
         startActivity(randomIntent)
     }
 }

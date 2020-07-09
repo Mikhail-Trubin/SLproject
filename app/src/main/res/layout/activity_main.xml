@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/img"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -13,6 +14,7 @@
         android:layout_height="62dp"
         android:layout_marginStart="112dp"
         android:layout_marginLeft="112dp"
+        android:onClick="enter"
         android:text="Вход"
         android:textColor="#656565"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,13 +23,16 @@
         app:layout_constraintVertical_bias="0.831" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/enter"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_launcher_background"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -44,6 +49,7 @@
         android:text="Добро пожаловать"
         android:textColor="#494949"
         android:textSize="30sp"
+        android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,6 +64,15 @@
         android:textColor="#656565"
         app:layout_constraintBottom_toTopOf="@+id/enter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/image" />
+
+    <Button
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="test"
+        android:text="test"
+        tools:layout_editor_absoluteX="295dp"
+        tools:layout_editor_absoluteY="22dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

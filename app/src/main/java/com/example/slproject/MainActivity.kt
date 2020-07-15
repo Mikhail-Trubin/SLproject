@@ -18,8 +18,4 @@ class MainActivity : AppCompatActivity() {
         val randomIntent = Intent( this, forth::class.java)
         startActivity(randomIntent)
     }
-    fun test (view: View){
-        val randomIntent = Intent( this, test::class.java)
-        startActivity(randomIntent)
-    }
 }

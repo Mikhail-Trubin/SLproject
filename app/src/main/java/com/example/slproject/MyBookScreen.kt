@@ -8,16 +8,21 @@ import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
 
 class MyBookScreen : AppCompatActivity() {
-    companion object {
-        const val USER_ID = "5"
-    }
+
     private var t = serveractivity()
     private lateinit var listView : ListView
-    var sec = second()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_book_screen)
-        val jsonList = t.userBookList(USER_ID)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        var userId = getIntent().getExtras()!!.get("fiveUserId").toString()
+
+        val jsonList = t.userBookList(userId)
 
         val gson = Gson()
         val arrayBookType = object : TypeToken<ArrayList<UserBook>>() {}.type

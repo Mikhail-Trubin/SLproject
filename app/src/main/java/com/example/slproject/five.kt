@@ -9,24 +9,19 @@ import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_five.*
 
+
 class five : AppCompatActivity() {
     var t = serveractivity()
-    var sec = second()
-
+    var userId = "1"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_five)
     }
-    fun mybook (view: View){
-        val randomIntent = Intent( this, MyBookScreen::class.java)
-        startActivity(randomIntent)
-    }
-    fun userInfoGet(view: View){
-        // warning
-        var userId : String = sec.a
 
-        if( userId.isEmpty())
-            userId = "5"
+    override fun onResume() {
+        super.onResume()
+
+        userId = getIntent().getExtras()!!.get("secondUserId").toString()
 
         val json = t.userInfoGet(userId)
 
@@ -40,16 +35,22 @@ class five : AppCompatActivity() {
         Who.text = userInfo.getPosition()
         Educ.text = userInfo.getEducation()
     }
+
+    fun mybook (view: View){
+        val randomIntent = Intent( this, MyBookScreen::class.java)
+        startActivity(randomIntent)
+    }
+
     fun michaelTBookListActivity(view: View) {
         val intent = Intent(this, MyBookScreen::class.java)
 
-        var userId : String = sec.a
-
-        if( userId.isEmpty())
-            userId = "5"
-
-        intent.putExtra(MyBookScreen.USER_ID, userId)
+        intent.putExtra("fiveUserId", userId)
 
         startActivity(intent)
+    }
+
+    fun infodev (view: View){
+        val randomIntent = Intent( this, infodev::class.java)
+        startActivity(randomIntent)
     }
 }

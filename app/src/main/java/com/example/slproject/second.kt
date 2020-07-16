@@ -11,13 +11,10 @@ class second : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
     }
-    fun ok (view: View) {
 
+    fun ok (view: View) {
         val randomIntent = Intent( this, five::class.java)
+        randomIntent.putExtra("secondUserId", userid.text)
         startActivity(randomIntent)
     }
-    val a = userid.getText().toString()
-
-
-
 }

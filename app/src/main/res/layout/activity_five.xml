@@ -7,6 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".five">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="58dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gvhngjm" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="198dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:text="Smart Library"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/Who"
         android:layout_width="wrap_content"
@@ -17,43 +41,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Name" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="127dp"
-        android:layout_height="124dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333"
-        app:srcCompat="@drawable/book"
-        tools:srcCompat="@drawable/ic_launcher_background" />
-
     <Button
         android:id="@+id/mybook"
         android:layout_width="241dp"
         android:layout_height="66dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="56dp"
+        android:background="#7748AD"
         android:onClick="michaelTBookListActivity"
         android:text="Мои книги"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="243dp"
         android:layout_height="67dp"
+        android:background="#7748AD"
         android:gravity="center"
         android:onClick="infodev"
         android:text="О приложении"
         android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,9 +82,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
         android:layout_marginLeft="140dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
     <TextView
         android:id="@+id/Educ"
@@ -97,8 +110,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="164dp"
-        android:layout_height="102dp"
+        android:layout_width="156dp"
+        android:layout_height="96dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/coin_de_page_png_4_png_image_page_png_632_387" />
@@ -107,13 +120,13 @@
         android:id="@+id/textView11"
         android:layout_width="57dp"
         android:layout_height="18dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:gravity="right"
         android:text="Имя:"
         app:layout_constraintEnd_toStartOf="@+id/Name"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
     <TextView
         android:id="@+id/textView25"
@@ -150,5 +163,17 @@
         android:text="Обучаеться в:"
         app:layout_constraintEnd_toStartOf="@+id/Educ"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="205dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="32dp"
+        android:text="О пользователе:"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.563"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

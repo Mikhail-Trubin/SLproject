@@ -21,7 +21,7 @@
         android:layout_height="51dp"
         android:layout_marginTop="80dp"
         android:gravity="center"
-        android:text="Smart Li"
+        android:text="Smart Ly"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.638"

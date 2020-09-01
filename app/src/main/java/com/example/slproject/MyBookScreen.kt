@@ -3,6 +3,8 @@ package com.example.slproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
@@ -10,7 +12,7 @@ import com.google.gson.reflect.TypeToken
 class MyBookScreen : AppCompatActivity() {
 
     private var t = serveractivity()
-    private lateinit var listView : ListView
+    private lateinit var listView : RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +33,8 @@ class MyBookScreen : AppCompatActivity() {
         // выведим в консоль список который мы получили
         books.forEachIndexed  { idx, dev -> println("> Item ${idx}:\n${dev}") }
 
-        listView = findViewById<ListView>(R.id.michaelTBookList)
-
+        listView = findViewById<RecyclerView>(R.id.michaelTBookList)
+        listView.layoutManager = LinearLayoutManager(this)
         listView.adapter = BookAdapter(this, books)
     }
 }

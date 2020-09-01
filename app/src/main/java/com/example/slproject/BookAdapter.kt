@@ -1,59 +1,51 @@
 package com.example.slproject
 
 import android.content.Context
+import android.graphics.Color
+import android.text.Layout
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 
-class BookAdapter (var context: Context, var books: List<UserBook>): BaseAdapter() {
+class BookAdapter (var context: Context, var books: List<UserBook>): RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
 
-    private class ViewHolder(row: View?) {
+    inner class BookViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var nameB: TextView
         var authorB: TextView
         var dateStartB: TextView
         var dateEndB: TextView
         init {
-            this.nameB = row!!.findViewById(R.id.itemBookNameTextView) as TextView
-            this.authorB = row.findViewById(R.id.itemBookAuthorTextView) as TextView
-            this.dateStartB = row.findViewById(R.id.itemBookDateStartTextView) as TextView
-            this.dateEndB = row.findViewById(R.id.itemBookDateEndTextView) as TextView
+            this.nameB = itemView.findViewById(R.id.itemBookNameTextView) as TextView
+            this.authorB = itemView.findViewById(R.id.itemBookAuthorTextView) as TextView
+            this.dateStartB = itemView.findViewById(R.id.itemBookDateStartTextView) as TextView
+            this.dateEndB = itemView.findViewById(R.id.itemBookDateEndTextView) as TextView
+        }
+        fun bind(book: UserBook){
+            nameB.text = "Название: "+book.getName()
+            authorB.text = "Автор: "+book.getAuthor()
+            dateStartB.text = "Взял: "+book.getDateStart()
+            dateEndB.text = "Сдать: "+book.getDateEnd()
+            if (book.getNotification() == 1){
+                itemView.setBackgroundColor(Color.RED)
+            }
         }
     }
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-
-        var view: View?
-        var viewHolder: ViewHolder
-        if (convertView == null) {
-            var layout = LayoutInflater.from(context)
-            view = layout.inflate(R.layout.book, parent, false)
-            viewHolder = ViewHolder(view)
-            view!!.tag = viewHolder
-        } else {
-            view = convertView
-            viewHolder = view.tag as ViewHolder
-        }
-
-        var book: UserBook = getItem(position) as UserBook
-        viewHolder.nameB.text = book.getName()
-        viewHolder.authorB.text = book.getAuthor()
-        viewHolder.dateStartB.text = book.getDateStart()
-        viewHolder.dateEndB.text = book.getDateEnd()
-
-        return view as View
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.book, parent, false)
+        return BookViewHolder(view)
     }
 
-    override fun getItem(position: Int): Any {
-        return books.get(position)
+    override fun getItemCount(): Int {
+      return  books.size
     }
 
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
+    override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
+       holder.bind(books[position])
     }
 
-    override fun getCount(): Int {
-        return books.count()
-    }
 }

@@ -17,14 +17,14 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="124dp"
-        android:layout_height="51dp"
+        android:layout_width="159dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
         android:layout_marginTop="80dp"
         android:gravity="center"
-        android:text="Smart Ly"
+        android:text="Smart Lib"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.638"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
